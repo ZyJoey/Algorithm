@@ -2,4 +2,4 @@ root = true
 
 charset = utf-8
 
-index_size = 2
+indent_size = 2
