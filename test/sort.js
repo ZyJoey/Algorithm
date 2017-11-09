@@ -8,6 +8,8 @@ require('../sort/selectionSort');
 
 require('../sort/insertionSort');
 
+require('../sort/quickSort');
+
 function getArray(length){
 
 	const arr = new Array(length);
@@ -20,7 +22,7 @@ function getArray(length){
 }
 
 
-const arr = getArray(1000);
+const arr = getArray(5000);
 
 //拷贝原始数组
 
@@ -73,4 +75,13 @@ describe('insertionSort',() => {
 		const copyArray = testArray.slice();
 		copyArray.binaryInsertionSort().should.be.eql(right);
 	})
+})
+
+describe('quickSort',() => {
+	
+	it('测试快速排序',() => {
+		const copyArray = testArray.slice();
+		copyArray.quickSort().should.be.eql(right);
+	})
+
 })
