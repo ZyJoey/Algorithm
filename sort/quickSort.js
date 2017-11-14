@@ -32,11 +32,9 @@ Array.prototype.quickSort = function(left = 0,right = this.length - 1){
 	}
 
 	this[left] = this[i];
-
 	this[i] = key;
-
+	
 	this.quickSort(left,i - 1);
-
 	this.quickSort(i + 1,right);
 
 	return this;

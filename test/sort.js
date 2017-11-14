@@ -1,14 +1,13 @@
 const should = require('should');
 
 require('../sort/bubbleSort');
-
 require('../sort/bucketSort');
-
 require('../sort/selectionSort');
-
 require('../sort/insertionSort');
-
+require('../sort/shellSort');
+require('../sort/mergeSort');
 require('../sort/quickSort');
+require('../sort/mergeSort');
 
 function getArray(length){
 
@@ -22,7 +21,7 @@ function getArray(length){
 }
 
 
-const arr = getArray(5000);
+const arr = getArray(10000);
 
 //拷贝原始数组
 
@@ -33,9 +32,9 @@ const right = arr.sort((a,b) => {
 	return a - b;
 });
 
-console.log('原始排序：' + testArray);
+/*console.log('原始排序：' + testArray);
 
-console.log('正确排序：' + right);
+console.log('正确排序：' + right);*/
 
 
 describe('bubbleSort',() => {
@@ -75,6 +74,11 @@ describe('insertionSort',() => {
 		const copyArray = testArray.slice();
 		copyArray.binaryInsertionSort().should.be.eql(right);
 	})
+
+	it('测试希尔排序',() => {
+		const copyArray = testArray.slice();
+		copyArray.shellSort().should.be.eql(right);
+	})
 })
 
 describe('quickSort',() => {
@@ -82,6 +86,15 @@ describe('quickSort',() => {
 	it('测试快速排序',() => {
 		const copyArray = testArray.slice();
 		copyArray.quickSort().should.be.eql(right);
+	})
+
+})
+
+describe('mergeSort',() => {
+	
+	it('测试归并排序',() => {
+		const copyArray = testArray.slice();
+		copyArray.mergeSort().should.be.eql(right);
 	})
 
 })
