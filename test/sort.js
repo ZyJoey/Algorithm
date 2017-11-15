@@ -8,6 +8,7 @@ require('../sort/shellSort');
 require('../sort/mergeSort');
 require('../sort/quickSort');
 require('../sort/mergeSort');
+require('../sort/heapSort');
 
 function getArray(length){
 
@@ -95,6 +96,15 @@ describe('mergeSort',() => {
 	it('测试归并排序',() => {
 		const copyArray = testArray.slice();
 		copyArray.mergeSort().should.be.eql(right);
+	})
+
+})
+
+describe('heapSort',() => {
+	
+	it('测试堆排序',() => {
+		const copyArray = testArray.slice();
+		copyArray.heapSort().should.be.eql(right);
 	})
 
 })
