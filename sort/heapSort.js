@@ -15,7 +15,6 @@ Array.prototype.heapSort = function(){
 		let temp = this[i];
 		this[i] = this[0];
 		this[0] = temp;
-
 		this.adjustHeap(0,i);
 	}
 
@@ -25,7 +24,7 @@ Array.prototype.heapSort = function(){
 Array.prototype.adjustHeap = function(i,len = this.length){
 	let left = 2*i + 1,
 		right = 2*i + 2,
-		max;
+		max = left;
 
 	if(left >= len){
 		return;
@@ -35,12 +34,12 @@ Array.prototype.adjustHeap = function(i,len = this.length){
 		max = (this[left] > this[right] ? left : right);
 	}
 
-	if(max && this[i] < this[max]){
+	if(this[i] < this[max]){
 		let temp = this[i];
 		this[i] = this[max];
 		this[max] = temp;
 		//2.将堆所有数据重新排序
-		this.adjustHeap(max,len);
+		return this.adjustHeap(max,len);
 	}
 
 }
