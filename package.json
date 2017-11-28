@@ -10,8 +10,10 @@
   "scripts": {
     "test-sort": "mocha test/sort.js -s 0",
     "test-search": "mocha test/search.js -s 0",
+    "test-structure": "mocha test/structure.js -s 0",
     "istanbul-sort": "istanbul cover _mocha test/sort.js --s 0 --delay",
-    "istanbul-search": "istanbul cover _mocha test/search.js --s 0 --delay"
+    "istanbul-search": "istanbul cover _mocha test/search.js --s 0 --delay",
+    "istanbul-structure": "istanbul cover _mocha test/structure.js --s 0 --delay"
   },
   "author": "",
   "license": "ISC"
